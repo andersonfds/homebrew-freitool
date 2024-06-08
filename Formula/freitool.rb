@@ -6,10 +6,10 @@ class Freitool < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/andersonfds/freitool/releases/download/v0.1.0/freitool_macOS_arm.tar.gz"
-      sha256 "5d6bc95920dbb7e4fc58433093e08d1575e67d5a15e41317fcffd5d5ca45c069"
+      sha256 "e57595408ead35c6e8c6e414c4280941dc964bf6fa057e9b3519c651a94f5d4b"
     elsif Hardware::CPU.intel?
       url "https://github.com/andersonfds/freitool/releases/download/v0.1.0/freitool_macOS_x86.tar.gz"
-      sha256 "692634e0b3fdd13d228fc5bb195710f539830d4cb9164db68f6440d17f6e7f99"
+      sha256 "e6168a7867eb27af099c44acbe6123ccd763cafb7ee1729c698927e54c6a4b3f"
     end
   end
 
