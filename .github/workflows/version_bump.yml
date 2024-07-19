@@ -2,6 +2,9 @@ name: Ruby Formula Version Bump
 
 on:
   workflow_dispatch:
+  repository_dispatch:
+    types:
+      - webhook
 
 permissions:
   contents: write
@@ -20,5 +23,8 @@ jobs:
 
       - name: Commit changes
         run: |
+          git config user.name "Anderson Freitas"
+          git config user.email "freitas@disroot.org"
+          # git add Formula/*
           git commit -am "Bump version"
-          git push origin HEAD:main
+          git push origin HEAD:main -f
