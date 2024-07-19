@@ -1,0 +1,30 @@
+name: Ruby Formula Version Bump
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 3.3.0
+      - name: Run script
+        run: |
+          ruby scripts/bump.rb
+
+      - name: Commit changes
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "bumper@users.noreply.github.com"
+          git commit -am "Bump version"
+          git push origin HEAD:main
+

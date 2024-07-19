@@ -44,4 +44,3 @@ replace_text($freitool, "{{SHA256_INTEL}}", sha256_intel.split(" ")[0])
 # Add to git and push to main
 `git add #{$freitool}`
 `git commit -m "Bump freitool to version #{version}"`
-`git push origin main`
