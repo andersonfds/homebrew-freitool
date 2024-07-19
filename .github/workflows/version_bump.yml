@@ -2,9 +2,6 @@ name: Ruby Formula Version Bump
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
 
 permissions:
   contents: write
@@ -23,8 +20,5 @@ jobs:
 
       - name: Commit changes
         run: |
-          git config --local user.name "github-actions[bot]"
-          git config --local user.email "bumper@users.noreply.github.com"
           git commit -am "Bump version"
           git push origin HEAD:main
-
